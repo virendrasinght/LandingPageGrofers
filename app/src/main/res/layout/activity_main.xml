@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.example.viren.landingpagegrofers.MainActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#dadada">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="false"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"></android.support.v4.view.ViewPager>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#dadada"
+                    android:orientation="vertical">
+
+                    <com.example.viren.landingpagegrofers.ExpandableHeightGridView
+                        android:id="@+id/spotsView"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isScrollContainer="false"
+                        android:numColumns="3"
+                        android:stretchMode="columnWidth"
+                        android:horizontalSpacing="1dp"
+                        android:verticalSpacing="1dp">
+
+                    </com.example.viren.landingpagegrofers.ExpandableHeightGridView>
+
+                    <com.example.viren.landingpagegrofers.ExpandableHeightGridView1
+                        android:id="@+id/spotsView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isScrollContainer="false"
+                        android:numColumns="3"
+                        android:horizontalSpacing="1dp"
+                        android:verticalSpacing="1dp"
+                        android:layout_marginTop="1dp"
+                        android:stretchMode="columnWidth">
+
+                    </com.example.viren.landingpagegrofers.ExpandableHeightGridView1>
+
+                    <Button
+                        android:id="@+id/handler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/homebuttonshape"
+                        android:text="More Categories"
+                        android:textAllCaps="false"
+                        android:textColor="#FF5722"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:layout_marginTop="15dp"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Featured Store"
+                        android:textSize="20sp"
+                        android:layout_centerHorizontal="true"/>
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/txt"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/homebuttonshape">
+<ImageView
+    android:layout_height="115dp"
+    android:layout_width="320dp"
+    android:src="@drawable/jaipur" />
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Super Store.Bangalore"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="15dp"/>
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Delivery by Tomorrow"
+                            android:background="@drawable/homebuttonshape"/>
+                    </LinearLayout>
+                    </RelativeLayout>
+            </LinearLayout>
+
+
+        </ScrollView>
+        <fragment
+            android:id="@+id/fragment_navigation_drawer"
+            android:name="com.example.viren.landingpagegrofers.NavigationDrawerFragment"
+            android:layout_width="230dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:layout="@layout/fragment_navigation_drawer"
+            tools:layout="@layout/fragment_navigation_drawer" />
+
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>
